@@ -1,0 +1,1412 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+<!-- LiveGood is up and running -->
+<!-- server ip 172.31.23.98 -->
+<!-- en and domain livegood.com <br> -->
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta charset="utf-8">
+
+		<title>LiveGood</title>
+		<meta name="description" content="" />
+		<meta name="author" content="admin" />
+
+		<!-- Responsive -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<!-- Stylesheets -->
+		<link href="https://www.livegood.com/htdocs/corp/css/bootstrap.css" rel="stylesheet">
+		<link href="https://www.livegood.com/htdocs/common/css/common.css?2" rel="stylesheet">
+		<link href="https://www.livegood.com/htdocs/corp/css/styles.css?1" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://www.livegood.com/htdocs/corp/css/shoppingCart.css?">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://www.livegood.com/htdocs/corp/css/owl.carousel.min.css">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="https://www.livegood.com/htdocs/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.livegood.com/htdocs/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.livegood.com/htdocs/favicon/favicon-16x16.png">
+		<link rel="manifest" href="https://www.livegood.com/htdocs/favicon/site.webmanifest">
+		<link rel="mask-icon" href="https://www.livegood.com/htdocs/favicon/safari-pinned-tab.svg" color="#66a92f">
+		<link rel="shortcut icon" href="https://www.livegood.com/htdocs/favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="https://www.livegood.com/htdocs/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src='https://www.livegood.com/htdocs/js/jquery.zoom.min.js'></script>
+
+		<!-- <script src="https://www.livegood.com/htdocs/js/bootstrap.min.js"></script> -->
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/event-source-polyfill/0.0.9/eventsource.min.js"></script>
+<script>
+   axios.defaults.withCredentials = true
+
+   function formatShoppingCart (shoppingCart) {
+      var data = shoppingCart.data
+      var details = data.SHOPPING_CART_DETAILS
+      var countryNames = {"AD":"Andorra","AE":"United Arab Emirates","AF":"Afghanistan","AG":"Antigua and Barbuda","AI":"Anguilla","AL":"Albania","AM":"Armenia","AN":"Netherlands Antilles","AO":"Angola","AQ":"Antarctica","AR":"Argentina","AS":"American Samoa","AT":"Austria","AU":"Australia","AW":"Aruba","AZ":"Azerbaijan","BA":"Bosnia And Herzegowina","BB":"Barbados","BD":"Bangladesh","BE":"Belgium","BF":"Burkina Faso","BG":"Bulgaria","BH":"Bahrain","BI":"Burundi","BJ":"Benin","BM":"Bermuda","BN":"Brunei Darussalam","BO":"Bolivia","BR":"Brazil","BS":"Bahamas","BT":"Bhutan","BV":"Bouvet Island","BW":"Botswana","BY":"Belarus","BZ":"Belize","CA":"Canada","CC":"Cocos Islands","CD":"Congo, Democratic Republic","CF":"Central African Republic","CG":"Congo","CH":"Switzerland","CI":"Cote d'ivoire","CK":"Cook Islands","CL":"Chile","CM":"Cameroon","CN":"China","CO":"Colombia","CR":"Costa Rica","CU":"Cuba","CV":"Cape Verde","CW":"Curacao","CX":"Christmas Island","CY":"Cyprus","CZ":"Czech Republic","DE":"Germany","DJ":"Djibouti","DK":"Denmark","DM":"Dominica","DO":"Dominican Republic","DZ":"Algeria","EC":"Ecuador","EE":"Estonia","EG":"Egypt","EH":"Western Sahara","ER":"Eritrea","ES":"Spain","ET":"Ethiopia","FI":"Finland","FJ":"Fiji","FK":"Falkland Islands","FM":"Micronesia","FO":"Faroe Islands","FR":"France","GA":"Gabon","GB":"United Kingdom","GD":"Grenada","GE":"Georgia","GF":"French Guiana","GG":"Guernsey","GH":"Ghana","GI":"Gibraltar","GL":"Greenland","GM":"Gambia","GN":"Guinea","GP":"Guadeloupe","GQ":"Equatorial Guinea","GR":"Greece","GS":"South Georgia","GT":"Guatemala","GU":"Guam","GW":"Guinea-bissau","GY":"Guyana","HK":"Hong Kong","HN":"Honduras","HR":"Croatia","HT":"Haiti","HU":"Hungary","IC":"Canary Islands","ID":"Indonesia","IE":"Ireland","IL":"Israel","IM":"Isle of Man","IN":"India","IS":"Iceland","IT":"Italy","JE":"Jersey","JM":"Jamaica","JO":"Jordan","JP":"Japan","KE":"Kenya","KG":"Kyrgyzstan","KH":"Cambodia","KI":"Kiribati","KM":"Comoros","KN":"Saint Kitts And Nevis","KR":"South Korea","KW":"Kuwait","KY":"Cayman Islands","KZ":"Kazakhstan","LA":"Laos","LB":"Lebanon","LC":"Saint Lucia","LI":"Liechtenstein","LK":"Sri Lanka","LR":"Liberia","LS":"Lesotho","LT":"Lithuania","LU":"Luxembourg","LV":"Latvia","MA":"Morocco","MC":"Monaco","MD":"Moldova","ME":"Montenegro","MF":"St. Martin","MG":"Madagascar","MK":"Macedonia","ML":"Mali","MM":"Myanmar","MN":"Mongolia","MO":"Macau","MP":"Northern Mariana Islands","MQ":"Martinique","MR":"Mauritania","MS":"Montserrat","MT":"Malta","MU":"Mauritius","MV":"Maldives","MW":"Malawi","MX":"Mexico","MY":"Malaysia","MZ":"Mozambique","NA":"Namibia","NC":"New Caledonia","NE":"Niger","NF":"Norfolk Island","NG":"Nigeria","NI":"Nicaragua","NL":"Netherlands","NO":"Norway","NP":"Nepal","NR":"Nauru","NU":"Niue","NZ":"New Zealand","OM":"Oman","PA":"Panama","PE":"Peru","PF":"French Polynesia","PG":"Papua New Guinea","PH":"Philippines","PK":"Pakistan","PL":"Poland","PM":"St. Pierre And Miquelon","PN":"Pitcairn","PR":"Puerto Rico","PT":"Portugal","PW":"Palau","PY":"Paraguay","QA":"Qatar","RE":"Reunion","RO":"Romania","RS":"Serbia","RU":"Russian Federation","RW":"Rwanda","SA":"Saudi Arabia","SB":"Solomon Islands","SC":"Seychelles","SD":"Sudan","SE":"Sweden","SG":"Singapore","SH":"St. Helena","SI":"Slovenia","SK":"Slovakia","SL":"Sierra Leone","SM":"San Marino","SN":"Senegal","SO":"Somalia","SR":"Suriname","SV":"El Salvador","SZ":"Swaziland","TC":"Turks And Caicos Islands","TD":"Chad","TG":"Togo","TH":"Thailand","TJ":"Tajikistan","TK":"Tokelau","TL":"Timor-Leste","TM":"Turkmenistan","TN":"Tunisia","TO":"Tonga","TR":"Turkey","TT":"Trinidad And Tobago","TV":"Tuvalu","TW":"Taiwan","TZ":"Tanzania","UA":"Ukraine","UG":"Uganda","US":"United States","UY":"Uruguay","UZ":"Uzbekistan","VC":"St. Vincent and the Grenadines","VE":"Venezuela","VG":"Virgin Islands, British","VI":"Virgin Islands","VN":"Viet Nam","VU":"Vanuatu","WS":"Samoa","XK":"Kosovo","YE":"Yemen","YT":"Mayotte","ZA":"South Africa","ZM":"Zambia","ZW":"Zimbabwe"};
+      console.log(shoppingCart)
+      console.log(data)
+      return {
+         shoppingCartDetails: details ? formatShoppingCartDetails(details) : [],
+         id: data.ID,
+         userId: data.USER_ID,
+         amount: Number(data.ORDER_AMOUNT),
+         retailAmount: Number(data.ORDER_RETAIL_AMOUNT),
+         bv: Number(data.ORDER_VOLUME),
+         shipping: Number(data.ORDER_SHIPPING),
+         notifications: data.NOTIFICATIONS,
+         errors: data.ERRORS,
+         country: data.COUNTRY,
+         countryName: countryNames[data.COUNTRY], 
+         state: data.STATE,
+         tax: Number(data.ORDER_TAX),
+         retailTax: Number(data.ORDER_RETAIL_TAX),
+         taxRate: Number(data.TAX_RATE),
+         total: Number(data.ORDER_TOTAL),
+         retailTotal: Number(data.ORDER_RETAIL_TOTAL),
+         freeCount: Number(data.FREE_COUNT),
+         percentOffName: data.PERCENT_OFF_NAME || '',
+         percentSavings: Number(data.PERCENT_SAVINGS),
+         percentOffNameSecond: data.PERCENT_OFF_NAME_SECOND || '',
+         percentSavingsSecond: Number(data.PERCENT_SAVINGS_SECOND),
+         totalMemberSave: Number(data.ORDER_MEMBER_SAVE),
+         modified: data.MODIFIED,
+         membership: data.MEMBERSHIP,
+         error: data.error,
+         shippingOrderCount: Number(data.SHIPPING_ORDER_COUNT),
+         couponAmount: Number()
+      }
+   }
+
+   function formatShoppingCartDetails (shoppingCartDetails) {
+      return shoppingCartDetails.map(function (detail) {
+         var productId = String(detail.PRODUCT_ID)
+         var quantity = Number(detail.QUANTITY)
+         var free = Boolean(detail.FREE)
+         var autoship = Boolean(Number(detail.AUTOSHIP))
+         return {
+            productId: productId,
+            quantity: quantity,
+            free: free,
+            autoship: autoship
+         }
+      })
+   }
+
+   function addMany (products) {
+      return add({
+         shoppingCartDetails: Object.keys(products).map(function (productId) {
+            return { productId: productId, quantity: products[productId], autoship: false } 
+         }) 
+      })
+   }
+
+   function addToCart (productId, quantity) {
+      return add({
+         shoppingCartDetails: [
+            { productId: productId, quantity: quantity, autoship: false }
+         ]
+      })
+   }
+
+   // function setProduct(productId, quantity) {
+   //    return update({
+   //       shoppingCartDetails: [
+   //          { productId: productId, quantity: quantity }
+   //       ]
+   //    })
+   // }
+
+   function setProduct(productId, {autoship, quantity}) {
+      return update({
+         shoppingCartDetails: [
+            { 
+               productId: productId, 
+               autoship: autoship, 
+               quantity: quantity
+            }
+         ]
+      })
+   }
+
+   function clearCart() {
+      return axios.post('/shoppingCart/clearCart', { name: "lgd-corp" }).then(formatShoppingCart)
+   }
+
+   function get() { //takes no arguments because the cookies do all the work
+      // will get or create shopping cart
+      return axios.post('/shoppingCart/get', { name: "lgd-corp" }).then(formatShoppingCart)
+   }
+
+   function submit () {
+      return Promise.resolve({})
+   }
+
+   function deleteFromCart (productId, quantity) {
+      return add({
+         shoppingCartDetails: [
+            { productId: productId, quantity: quantity * -1 }
+         ]
+      })
+   }
+
+   function update (update) {
+      return axios.post('/shoppingCart/update', formatUpdate(update)).then(formatShoppingCart)
+   }
+
+   
+   function add (update) {
+      return axios.post('/shoppingCart/add', formatAdd(update)).then(formatShoppingCart)
+   }
+
+   function formatUpdate (update) {
+      var shoppingCartDetails = update.shoppingCartDetails || []
+      return {
+         name: "lgd-corp",
+         STATE: update.state,
+         COUNTRY: update.country,
+         SHOPPING_CART_DETAILS: shoppingCartDetails.map(function (detail) {
+            return {
+               PRODUCT_ID: detail.productId,
+               QUANTITY: detail.quantity,
+               AUTOSHIP: Number(detail.autoship)
+            }
+         })
+      }
+   }
+
+   function formatAdd (update) {
+      var shoppingCartDetails = update.shoppingCartDetails || []
+      return {
+         name: "lgd-corp",
+         SHOPPING_CART_DETAILS: shoppingCartDetails.map(function (detail) {
+            return {
+               PRODUCT_ID: detail.productId,
+               QUANTITY: detail.quantity,
+               AUTOSHIP: Number(detail.autoship)
+            }
+         })
+      }
+   }
+
+   window.shoppingCart = {
+      addToCart: addToCart,
+      get: get,
+      submit: submit,
+      clearCart: clearCart,
+      setProduct: setProduct,
+      deleteFromCart: deleteFromCart,
+      addMany: addMany,
+      update: update,
+   }
+</script>
+
+<style>
+  /* #country-selector-popup {
+    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    z-index: 9997;
+    transition: all 300ms ease-in-out;
+  }
+
+  .country-selector-popup-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    opacity: 0.75;
+    z-index: 9996;
+  }
+
+  .country-selector-popup-content {
+    position: absolute;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 9999;
+    font-family: "Montserrat", sans-serif;
+  } */
+
+  #countrySelectorPopup .modal-content h3 {
+    display: block;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 24px 0;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    #countrySelectorPopup .modal-content h3 {
+      font-size: 34px;
+      line-height: 40px;
+    }
+  }
+  
+  #countrySelectorPopup .modal-content ship-country-select {
+    margin: 0 0 0 10px;
+  }
+
+  #countrySelectorPopup .modal-content .popup-cta-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+  }
+
+  #referrerConfirmPopup .modal-content .popup-cta-container {
+    padding-top: 40px;
+  }
+
+  .popup-cta-container .my-referrer-btn {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 992px) {
+    #referrerConfirmPopup .modal-content .popup-cta-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .popup-cta-container .my-referrer-btn {
+      margin-bottom: 0;
+    }
+  }
+
+  .not-affiliate-link-container {
+    margin-top: 20px;
+  }
+</style>
+
+<script type="module" src="https://www.livegood.com/htdocs/js/dist/elements/shoppingCart/main.js?131"></script>
+
+<!-- Country Selector Cart Pop Up -->
+<div class="modal fade" id="countrySelectorPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="yourCountry">Your Country</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Enter your country below to display available products.</p>
+
+        <div id="shippingCountryContainer"></div>
+
+        <form>
+          <label>Country: </label>
+          <span notranslate><select name="SHIP_COUNTRY"  onchange="changeAddressDisp()" class="form-control ship-country-select">
+<option selected="selected" value=""></option>
+<option value="US">United States</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia And Herzegowina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="IC">Canary Islands</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote d'ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CW">Curacao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="FK">Falkland Islands</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="XK">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macau</option>
+<option value="MK">Macedonia</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="MT">Malta</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RW">Rwanda</option>
+<option value="KN">Saint Kitts And Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia</option>
+<option value="KR">South Korea</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SH">St. Helena</option>
+<option value="MF">St. Martin</option>
+<option value="PM">St. Pierre And Miquelon</option>
+<option value="VC">St. Vincent and the Grenadines</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VN">Viet Nam</option>
+<option value="VI">Virgin Islands</option>
+<option value="VG">Virgin Islands, British</option>
+<option value="EH">Western Sahara</option>
+<option value="ZM">Zambia</option>
+</select></span>
+
+          <div class="popup-cta-container">
+            <button type="button" class="btn btn-gray close-pop-btn" data-dismiss="modal">Close</button>
+            <a href="javascript:void(0)" class="btn btn-red blue-pop-btn" onclick="openCountryConfirm();">Submit</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var country = "US";
+
+  if (!country) {
+            openCountryName();
+        }
+
+  /* Set the width of the side navigation to 250px */
+  function openCountryName() {
+//      jQuery('#countrySelectorPopup').modal('show');
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeCountryName() {
+      jQuery('#countrySelectorPopup').modal('hide');
+  }
+
+  var selectedCountry = '';
+
+  function changeAddressDisp() {
+    var countrySelectBox = document.querySelector('.ship-country-select');
+    selectedCountry = countrySelectBox.value;
+  }
+
+  function openCountryConfirm() {
+    if (selectedCountry) {
+        shoppingCart.update({ country: selectedCountry }).then(function () {
+        closeCountryName();
+        location.reload();
+      });
+    }
+  }
+
+  function setShippingCountry() {
+    shoppingCart.get().then(
+      function (data) {
+        if (data.countryName) {
+          var shippingCountryContainer = document.getElementById('shippingCountryContainer');
+
+          shippingCountryContainer.style.display = "block";
+
+          shippingCountryContainer.innerHTML = '<p>Your current shipping country is: <var>' + data.countryName + '</var></p>';
+        }
+      }
+    );
+  }
+
+  setShippingCountry();
+</script>
+<!-- End Country Selector Cart Pop Up -->
+
+
+<!-- Referrer Confirm Pop Up -->
+<div class="modal fade" id="referrerConfirmPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="referredBy">You Were Referred To LiveGood By</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5><var username>LGD::Powerline=HASH(0x55c32954fb18) LGD::Powerline=HASH(0x55c32954fb18)</var></h5>
+
+        <p>Please note, your referrer cannot be changed after your account is created.</p>
+
+        <div class="popup-cta-container">
+          <a href="https://www.livegood.com/cjoin" class="btn btn-red my-referrer-btn" onclick="closeReferrerConfirm()" style="line-height:28px">Yes, This is My Referrer</a>
+          <!-- <button type="button" class="btn btn-red close-pop-btn" data-dismiss="modal">Close</button> -->
+          <a href="javascript:void(0)" class="btn btn-gray not-referrer-btn" data-dismiss="modal" onclick="closeReferrerConfirm(); openReferrerName();">No, This is Not My Referrer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Set the width of the side navigation to 250px */
+  function openReferrerConfirm() {
+                window.location.href = '/cjoin';     
+      //    document.querySelector('.navbar-toggler').click();
+//    jQuery('#referrerConfirmPopup').modal('show');
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeReferrerConfirm() {
+    jQuery('#referrerConfirmPopup').modal('hide');
+  }
+</script>
+
+<!-- End Referrer Confirm Pop Up -->
+
+
+<!-- Referrer Name Pop Up -->
+<script>
+  function corpAff(x) {
+    var url = "/ajax/systemRotator";
+
+    console.log("in ajax section");
+
+    jQuery.get(
+      url,
+      function(data) {
+        systemRotatorSetEnroller(data);
+      }
+    );
+
+      }
+
+  function systemRotatorSetEnroller (data) {
+    document.forms['enrollerSubmit'].elements['enroller'].value = data.enroller;
+    document.forms['enrollerSubmit'].elements['SOURCE'].value = data.source;
+    document.forms['enrollerSubmit'].submit();
+  }
+
+  function enrollerFormSubmit() {
+    document.forms['enrollerSubmit'].action = "cjoin";
+    document.forms['enrollerSubmit'].submit();
+  }
+
+  function toggleDisabled(element) {
+    element.disabled = !element.disabled
+  }
+
+  // if site.id then show this
+  function openReferrerName() {
+          window.location.href = '/cjoin';     
+//    document.querySelector('.navbar-toggler').click();
+//    jQuery('#referrerNamePopup').modal('show');
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeReferrerName() {
+    jQuery('#referrerNamePopup').modal('hide');
+  }
+
+  function changeToAffiliateBox () {
+    document.getElementById('alreadyHaveAccountBox').style.display = "none";
+    document.getElementById('referringAffiliateBox').style.display = "block";
+  }
+</script>
+
+<div class="modal fade" id="referrerNamePopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="yourCountry">Referring Affiliate</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Already Have a Referring Affiliate?</h3>
+
+        <p>Affiliates provide a seamless experience with your LiveGood products. If you ever have any questions or concerns, your Affiliate is there to help. Plus, if you’re not completely satisfied with your purchases, we offer a 60-Day Money-Back Guarantee to all our customers!</p>
+
+        <form method="POST" name="enrollerSubmit">
+          <input type="hidden" name="CHECKOUT" value="1">
+          <input type="hidden" name="SOURCE" value="">
+          <input type="hidden" name="did" value="1">
+
+          <div id="refLabel">
+            <p>Please provide the username of your Referring Affiliate.</p>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Referrer's Name" name="enroller">
+          </div>
+
+          
+          <div class="popup-cta-container">
+            <button class="btn btn-red" onclick="enrollerFormSubmit()">Submit</button>
+          </div>
+        </form>
+        <form method="POST" name="corpAff">
+          <input type="hidden" name="CHECKOUT" value="1">
+          <input type="hidden" name="did" value="1">
+          <input type="hidden" name="source" value="">
+          <input type="hidden" name="enroller" value="founder">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Referrer Name Pop Up -->
+
+<div class="modal fade" id="add-to-cart-error-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Error</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+       </button>
+      </div>
+      <div class="add-to-cart-error-popup-content">
+       <br>
+       <div id="addToCartErrorText"></div>
+       <div id="addToCartErrorButton"><a href="javascript:void(0)" class="btn btn-success add-to-cart-btn" onclick="closeAddToCartErrorPopUp()">OK</a></div>
+       <div id="addToCartErrorButtonCart" style="display:none"><a href="javascript:void(0)" class="btn btn-success add-to-cart-btn" onclick="closeAddToCartErrorPopUpOpenCart()">Go to Shopping Cart</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  /* Set the width of the side navigation to 0 */
+  function closeAddToCart() {
+    document.getElementById("add-to-cart-popup").style.display = "none";
+  }
+  function closeAddToCartErrorPopUp() {
+     jQuery('#add-to-cart-error-popup').modal('hide');
+  }
+  function closeAddToCartErrorPopUpOpenCart() {
+     jQuery('#add-to-cart-error-popup').modal('hide');
+     document.getElementById('openCart').click();
+  }
+</script>
+<!-- End Add to Cart Pop Up -->
+
+
+<!-- Cart Contents Changed Popup -->
+<!-- <div id="cart-contents-changed-popup">
+  <div class="add-to-cart-popup-overlay"></div>
+
+  <div class="add-to-cart-popup-content">
+    <p>The contents of your cart have changed! The page will now reload.</p>
+    <a href="javascript:void(0)" class="blue-pop-btn" onclick="closeCartContentsChangedPopUp()">O.K.</a>
+  </div>
+</div> -->
+<!-- End Cart Contents Changed Popup -->
+
+
+<div id="openCartMobile" style="display:none"></div>
+<!-- test site id  -->
+<!-- End Top Bar -->
+
+
+<script>
+  /* Set the width of the side navigation to 250px */
+  function openCart() {
+      document.querySelector('.navbar-toggler').click();
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeCart() {
+      // document.getElementById("slide-cart").style.right = "-100%";
+  }
+</script>
+
+<script>
+  /* Set the width of the side navigation to 250px */
+  function openMobileCart() {
+      document.querySelector('.navbar-toggler').click();
+      // bsCollapse.toggle();
+      document.getElementById("mobile-slide-cart").style.right = "0";
+  }
+
+  /* Set the width of the side navigation to 0 */
+  function closeMobileCart() {
+      document.getElementById("mobile-slide-cart").style.right = "-260px";
+  }
+</script>
+
+<shopping-cart has-enroller="true" product-data-json='{"1":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-membership.png","max":1,"name":"Monthly Membership","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"10":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/pet-full-spectrum-300-chicken_front.jpg","max":10,"name":"Pet Full-Spectrum (300mg) - Chicken","price":"14.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"100":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/ultimate-wellness-pack_factor4.png","isSpecialPackMainProduct":1,"max":1,"name":"Ultimate Wellness Pack","price":"99.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"101":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/ultimate-wellness-pack_factor4.png","isSpecialPackMainProduct":1,"max":1,"name":"Ultimate Wellness Pack + Coffee","price":"114.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"11":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/full-spectrum-750-natural_front.jpg","max":10,"name":"Full-Spectrum (750mg) - Natural","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"12":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/full-spectrum-1500-natural_front.jpg","max":10,"name":"Full-Spectrum (1500mg) - Natural","price":"23.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"13":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/full-spectrum-750-peppermint_front.jpg","max":10,"name":"Full-Spectrum (750mg) - Peppermint","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"14":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/full-spectrum-1500-peppermint_front.jpg","max":10,"name":"Full-Spectrum (1500mg) - Peppermint","price":"23.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"15":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/aminos_front.png","max":10,"name":"Aminos","price":"17.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"16":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/glyco-nutrients_front.png","max":10,"name":"Glyco Nutrients","price":"34.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"17":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/stress_front.png","max":10,"name":"Stress","price":"8.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"18":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/inflammation_front.png","max":10,"name":"Inflammation","price":"16.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"19":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/immunity_front.png","max":10,"name":"Immunity","price":"16.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"2":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/multi-vitamin-men_front.png","max":10,"name":"Bio-Active Complete Multi-Vitamin For Men","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"20":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/sbc-e3_front.png","max":10,"name":"E3 - Energy, Endurance, Electrolytes","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"21":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/sbc-instant-youth_front.jpg","max":10,"name":"Instant Youth","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"22":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/sbc-ageless_front.jpg","max":10,"name":"Ageless Skin Serum","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"23":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/daily-essentials-pack-men.png","max":10,"name":"Daily Essentials Pack - Men","price":"27.40","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"24":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-affiliate-membership.png","max":1,"name":"Become an Affiliate","price":"40.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"25":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/daily-essentials-pack-women.png","max":10,"name":"Daily Essentials Pack - Women","price":"27.40","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"26":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-membership.png","max":1,"name":"Yearly Membership","price":"99.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"27":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/aminos_fruitpunch_front.png?2","max":10,"name":"Essential Aminos - Fruit Punch","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"28":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/aminos_lemonlime_front.png?2","max":10,"name":"Essential Aminos - Lemon Lime","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"29":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/lean-body-pack.png","isSpecialPackMainProduct":1,"max":1,"name":"Lean Body Pack","price":"89.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"3":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/multi-vitamin-women_front.png","max":10,"name":"Bio-Active Complete Multi-Vitamin for Women with Iron","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"30":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/lean-body-pack_with-coffee.png","isSpecialPackMainProduct":1,"max":1,"name":"Lean Body Pack + Coffee","price":"104.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"31":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/ultimate-wellness-pack.png","isSpecialPackMainProduct":1,"max":1,"name":"Ultimate Wellness Pack - Original","price":"99.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"32":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/skin-care-pack.png","max":10,"name":"Skin Care Pack","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"33":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/ultimate-wellness-pack_with-coffee.png","isSpecialPackMainProduct":1,"max":1,"name":"Ultimate Wellness Pack + Coffee - Original","price":"114.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"34":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-hats_4.jpg","max":5,"name":"Live Good Hat - navy front\/gray mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"35":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-hats_4.jpg","max":5,"name":"LiveGood Hat - gray front\/black mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"36":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-hats_3.jpg","max":5,"name":"Live Good Hat - gray front\/orange mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"37":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-hats_4.jpg","max":5,"name":"LiveGood Hat - gray front\/green mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"38":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-hats_4.jpg","max":5,"name":"LiveGood Hat - gray front\/teal mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"39":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_navy.png","max":5,"name":"Men&apos;s Navy T-Shirt Small","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"4":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/d3-k2_front.png","max":10,"name":"D3-K2 2000","price":"8.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"40":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_navy.png","max":5,"name":"Men&apos;s Navy T-Shirt Medium","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"41":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_navy.png","max":5,"name":"Men&apos;s Navy T-Shirt Large","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"42":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_navy.png","max":5,"name":"Men&apos;s Navy T-Shirt XL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"43":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_navy.png","max":5,"name":"Men&apos;s Navy T-Shirt XXL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"44":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_gray.png","max":5,"name":"Men&apos;s Gray T-Shirt Small","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"45":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_gray.png","max":5,"name":"Men&apos;s Gray T-Shirt Medium","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"46":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_gray.png","max":5,"name":"Men&apos;s Gray T-Shirt Large","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"47":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_gray.png","max":5,"name":"Men&apos;s Gray T-Shirt XL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"48":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-t-shirt_gray.png","max":5,"name":"Men&apos;s Gray T-Shirt XXL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"49":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/shaker-bottle_black.png","max":10,"name":"Shaker Bottle","price":"6.99","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"5":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/ultra-magnesium-complex_front.png","max":10,"name":"Ultra Magnesium Complex","price":"8.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"50":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/factor4_front.png","max":10,"name":"Factor4","price":"18.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"51":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/maximum-energy-packTile.png","isSpecialPackMainProduct":1,"max":1,"name":"Maximum Energy Pack","price":"69.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"52":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/everything-packTile.png","max":1,"name":"Everything Pack Version 1","price":"299.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"53":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/cbd-pain-relief-cream_front.png","max":10,"name":"CBD Pain Relief Cream","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"54":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-black.png","max":5,"name":"Men&apos;s Black Polo Small","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"55":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-black.png","max":5,"name":"Men&apos;s Black Polo Medium","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"56":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-black.png","max":5,"name":"Men&apos;s Black Polo Large","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"57":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-black.png","max":5,"name":"Men&apos;s Black Polo XL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"58":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-black.png","max":5,"name":"Men&apos;s Black Polo XXL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"59":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-gray.png","max":5,"name":"Men&apos;s Gray Polo Small","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"6":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/complete-plant-based-protein_front.png","max":10,"name":"Complete Plant Based Protein","price":"22.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"60":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-gray.png","max":5,"name":"Men&apos;s Gray Polo Medium","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"61":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-gray.png","max":5,"name":"Men&apos;s Gray Polo Large","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"62":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-gray.png","max":5,"name":"Men&apos;s Gray Polo XL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"63":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-gray.png","max":5,"name":"Men&apos;s Gray Polo XXL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"64":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-navy.png","max":5,"name":"Men&apos;s Navy Polo Small","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"65":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-navy.png","max":5,"name":"Men&apos;s Navy Polo Medium","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"66":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-navy.png","max":5,"name":"Men&apos;s Navy Polo Large","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"67":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-navy.png","max":5,"name":"Men&apos;s Navy Polo XL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"68":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-polo-navy.png","max":5,"name":"Men&apos;s Navy Polo XXL","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"69":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-black.png","max":5,"name":"Women&apos;s Black Tank Top Small","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"7":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/super-greens_front.png?1","max":10,"name":"Super Greens","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"70":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-black.png","max":5,"name":"Women&apos;s Black Tank Top Medium","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"71":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-black.png","max":5,"name":"Women&apos;s Black Tank Top Large","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"72":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-black.png","max":5,"name":"Women&apos;s Black Tank Top XL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"73":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-black.png","max":5,"name":"Women&apos;s Black Tank Top XXL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"74":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-gray.png","max":5,"name":"Women&apos;s Gray Tank Top Small","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"75":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-gray.png","max":5,"name":"Women&apos;s Gray Tank Top Medium","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"76":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-gray.png","max":5,"name":"Women&apos;s Gray Tank Top Large","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"77":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-gray.png","max":5,"name":"Women&apos;s Gray Tank Top XL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"78":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-gray.png","max":5,"name":"Women&apos;s Gray Tank Top XXL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"79":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-navy.png","max":5,"name":"Women&apos;s Navy Tank Top Small","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"8":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/super-reds_front.png?3","max":10,"name":"Super Reds","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"80":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-navy.png","max":5,"name":"Women&apos;s Navy Tank Top Medium","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"81":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-navy.png","max":5,"name":"Women&apos;s Navy Tank Top Large","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"82":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-navy.png","max":5,"name":"Women&apos;s Navy Tank Top XL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"83":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-tanktop-navy.png","max":5,"name":"Women&apos;s Navy Tank Top XXL","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"84":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/livegood-bracelet.png","max":1,"name":"Free LiveGood Bracelet Band!","price":"0.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"85":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/collagen-peptides_front.png","max":10,"name":"Collagen Peptides","price":"27.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"86":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/energy-and-focus-patches_front.png","max":10,"name":"Energy and Focus Patches","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"87":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/sleep-patches_front.png","max":10,"name":"Sleep Patches","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"88":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/patches-packTileb.png","max":10,"name":"AM\/PM Pack","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"89":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/everything-packTile4.png","max":10,"name":"Everything Pack","price":"319.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"9":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/organic-coffee_front.png","max":10,"name":"Organic Coffee","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"90":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/everything-packTile2_no_cbd.png","max":10,"name":"Everything Pack - Without CBD","price":"229.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"91":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/methylene-blue_front.png","max":10,"name":"Methylene Blue Nootropic","price":"12.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"92":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/one-mission-t-shirt.png","max":5,"name":"One Mission T-Shirt Small","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"93":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/one-mission-t-shirt.png","max":5,"name":"One Mission T-Shirt Medium","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"94":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/one-mission-t-shirt.png","max":5,"name":"One Mission T-Shirt Large","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"95":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/one-mission-t-shirt.png","max":5,"name":"One Mission T-Shirt XL","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"96":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/one-mission-t-shirt.png","max":5,"name":"One Mission T-Shirt XXL","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"97":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/creatine-front.png","max":10,"name":"Creatine + HMB","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"98":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/international-wellness-pack-men.png","max":10,"name":"International Wellness Pack - Men","price":"89.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"99":{"allowAutoship":0,"image":"https:\/\/images.livegood.com\/powerline\/products\/international-wellness-pack-women.png","max":10,"name":"International Wellness Pack - Women","price":"89.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0}}' script-name='bo/home' open-cart-initially='false' is-logged-in='true' is-member='true' coupon='0' enroller-first="Josephine" retail-only="0"></shopping-cart>
+		
+		<!-- pag name home -->
+                
+                                   <style>
+    #promoPopup .modal-body {
+        position: relative;
+        border: 15px solid #f15a24;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+
+    .first-time-promo-popup__logo-container {
+        margin-bottom: 1rem;
+    }
+    .first-time-promo-popup__logo-container img{
+        width: 100%;
+    }
+
+    .first-time-promo-popup__logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #promoPopup .modal-body .close {
+        position: absolute;
+        /* margin: -1rem -1rem -1rem auto; */
+        padding: 1rem;
+        right: 1rem;
+        top: 1rem;
+        z-index: 3000;
+    }
+
+    .first-time-promo-popup__heading {
+        color: #66a92f;
+        font-size: 72px;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .first-time-promo-popup__sub-heading {
+        display: block;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .first-time-promo-popup__form-heading {
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .first-time-promo-popup__form {
+        margin: 0;
+    }
+
+    @media (min-width: 768px) {
+        .first-time-promo-popup__form {
+            margin: 0 6rem;
+        }
+    }
+
+    .first-time-promo-popup__form-label {
+        font-size: 16px;
+        padding-right: .5rem;
+    }
+
+    .first-time-promo-popup__form .col-sm-9 {
+        padding-left: .5rem;
+    }
+
+    .first-time-promo-popup__form-control {
+        background-color: #ddd;
+    }
+
+    .first-time-promo-popup-btn__container {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .first-time-promo-popup-btn {
+        color: #fff;
+        background-color: #f15a24;
+        border-color: #f15a24;
+        font-size: 20px;
+        padding: 1rem 4rem;
+    }
+
+    .first-time-promo-popup__form-cancel-btn {
+        display: block;
+        text-align: center;
+    }
+
+    .first-time-promo-popup__form-cancel-btn a {
+        color: #666;
+    }
+
+    .first-time-promo-popup__form-cancel-btn a:hover {
+        color: #999;
+    }
+
+    .first-time-promo-popup__products-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .first-time-promo-popup__products-img {
+            max-width: 80%;
+        }
+    }
+
+    .first-time-promo-popup__ok-btn-container {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .first-time-promo-popup__ok-btn {
+        color: #fff;
+        background-color: #66a92f;
+        border-color: #66a92f;
+        font-size: 24px;
+        padding: 1rem 4rem;
+    }
+
+    .first-time-promo-popup__message {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .ajax-preloader {
+        background: url(/images/loaders/loader_2.svg);
+        display: none;
+        height: 20rem;
+        margin: 2rem auto;
+        width: 20rem;
+    }
+
+    .is-invalid .invalid-feedback {
+        display: block;
+    }
+</style>
+<!-- promoOption  -->
+<div class="modal fade" id="promoPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 750px;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" onclick="closePromoPopup()" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="first-time-promo-popup__logo-container">
+                            <img src="https://images.livegood.com/powerline/promos/december2023.jpg" alt="LiveGood">
+                        </div>
+                        <div id="promoPopupFormContainer" class="first-time-promo-popup__form-container">
+                            <div class="first-time-promo-popup__form-cancel-btn">
+                                <a href="#" data-dismiss="modal" onclick="closePromoPopup()">Close Banner</a>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function closePromoPopup() {
+        jQuery('#promoPopup').modal('hide');
+    }
+</script>
+</script>
+
+
+<shopping-cart has-enroller="false" product-data-json='{"1":{"allowAutoship":0,"image":"\/images\/products\/livegood-membership.png","max":"1","name":"Monthly Membership","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"10":{"allowAutoship":0,"image":"\/images\/products\/pet-full-spectrum-300-chicken_front.jpg","max":"10","name":"Pet Full-Spectrum (300mg) - Chicken","price":"14.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"11":{"allowAutoship":0,"image":"\/images\/products\/full-spectrum-750-natural_front.jpg","max":"10","name":"Full-Spectrum (750mg) - Natural","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"12":{"allowAutoship":0,"image":"\/images\/products\/full-spectrum-1500-natural_front.jpg","max":"10","name":"Full-Spectrum (1500mg) - Natural","price":"26.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"13":{"allowAutoship":0,"image":"\/images\/products\/full-spectrum-750-peppermint_front.jpg","max":"10","name":"Full-Spectrum (750mg) - Peppermint","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"14":{"allowAutoship":0,"image":"\/images\/products\/full-spectrum-1500-peppermint_front.jpg","max":"10","name":"Full-Spectrum (1500mg) - Peppermint","price":"26.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"15":{"allowAutoship":0,"image":"\/images\/products\/aminos_front.png","max":"10","name":"Aminos","price":"17.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"16":{"allowAutoship":0,"image":"\/images\/products\/glyco-nutrients_front.png","max":"10","name":"Glyco Nutrients","price":"34.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"17":{"allowAutoship":0,"image":"\/images\/products\/stress_front.png","max":"10","name":"Stress","price":"8.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"18":{"allowAutoship":0,"image":"\/images\/products\/inflammation_front.png","max":"10","name":"Inflammation","price":"16.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"19":{"allowAutoship":0,"image":"\/images\/products\/immunity_front.png","max":"10","name":"Immunity","price":"16.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"2":{"allowAutoship":0,"image":"\/images\/products\/multi-vitamin-men_front.png","max":"10","name":"Bio-Active Complete Multi-Vitamin For Men","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"20":{"allowAutoship":0,"image":"\/images\/products\/sbc-e3_front.png","max":"10","name":"E3 - Energy, Endurance, Electrolytes","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"21":{"allowAutoship":0,"image":"\/images\/products\/sbc-instant-youth_front.jpg","max":"10","name":"Instant Youth","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"22":{"allowAutoship":0,"image":"\/images\/products\/sbc-ageless_front.jpg","max":"10","name":"Ageless Skin Serum","price":"14.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"23":{"allowAutoship":0,"image":"\/images\/products\/daily-essentials-pack-men.png","max":"1","name":"Daily Essentials Pack - Men","price":"29.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"24":{"allowAutoship":0,"image":"\/images\/products\/livegood-affiliate-membership.png","max":"1","name":"Become an Affiliate","price":"40.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"25":{"allowAutoship":0,"image":"\/images\/products\/daily-essentials-pack-women.png","max":"1","name":"Daily Essentials Pack - Women","price":"29.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"26":{"allowAutoship":0,"image":"\/images\/products\/livegood-membership.png","max":"1","name":"Yearly Membership","price":"99.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"27":{"allowAutoship":0,"image":"\/images\/products\/aminos_fruitpunch_front.png?2","max":"10","name":"Essential Aminos - Fruit Punch","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"28":{"allowAutoship":0,"image":"\/images\/products\/aminos_lemonlime_front.png?2","max":"10","name":"Essential Aminos - Lemon Lime","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"29":{"allowAutoship":0,"image":"\/images\/products\/lean-body-pack.png","isSpecialPackMainProduct":1,"max":"1","name":"Lean Body Pack","price":"89.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"3":{"allowAutoship":0,"image":"\/images\/products\/multi-vitamin-women_front.png","max":"10","name":"Bio-Active Complete Multi-Vitamin for Women with Iron","price":"9.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"30":{"allowAutoship":0,"image":"\/images\/products\/lean-body-pack_with-coffee.png","isSpecialPackMainProduct":1,"max":"1","name":"Lean Body Pack + Coffee","price":"104.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"31":{"allowAutoship":0,"image":"\/images\/products\/ultimate-wellness-pack.png","isSpecialPackMainProduct":1,"max":"1","name":"Ultimate Wellness Pack","price":"99.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"32":{"allowAutoship":0,"image":"\/images\/products\/skin-care-pack.png","max":"1","name":"Skin Care Pack","price":"24.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"33":{"allowAutoship":0,"image":"\/images\/products\/ultimate-wellness-pack_with-coffee.png","isSpecialPackMainProduct":1,"max":"1","name":"Ultimate Wellness Pack + Coffee","price":"114.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"34":{"allowAutoship":0,"image":"\/images\/products\/livegood-hats_3.jpg","max":"5","name":"Live Good Hat - navy front\/gray mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"35":{"allowAutoship":0,"image":"\/images\/products\/livegood-hats_3.jpg","max":"5","name":"LiveGood Hat - gray front\/black mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"36":{"allowAutoship":0,"image":"\/images\/products\/livegood-hats_3.jpg","max":"5","name":"Live Good Hat - gray front\/orange mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"37":{"allowAutoship":0,"image":"\/images\/products\/livegood-hats_3.jpg","max":"5","name":"LiveGood Hat - gray front\/green mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"38":{"allowAutoship":0,"image":"\/images\/products\/livegood-hats_3.jpg","max":"5","name":"LiveGood Hat - gray front\/teal mesh","price":"14.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"39":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_navy.png","max":"5","name":"Men&apos;s Navy T-Shirt Small","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"4":{"allowAutoship":0,"image":"\/images\/products\/d3-k2_front.png","max":"10","name":"D3-K2 2000","price":"8.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"40":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_navy.png","max":"5","name":"Men&apos;s Navy T-Shirt Medium","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"41":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_navy.png","max":"5","name":"Men&apos;s Navy T-Shirt Large","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"42":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_navy.png","max":"5","name":"Men&apos;s Navy T-Shirt XL","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"43":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_navy.png","max":"5","name":"Men&apos;s Navy T-Shirt XXL","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"44":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_gray.png","max":"5","name":"Men&apos;s Gray T-Shirt Small","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"45":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_gray.png","max":"5","name":"Men&apos;s Gray T-Shirt Medium","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"46":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_gray.png","max":"5","name":"Men&apos;s Gray T-Shirt Large","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"47":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_gray.png","max":"5","name":"Men&apos;s Gray T-Shirt XL","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"48":{"allowAutoship":0,"image":"\/images\/products\/livegood-t-shirt_gray.png","max":"5","name":"Men&apos;s Gray T-Shirt XXL","price":"12.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"49":{"allowAutoship":0,"image":"\/images\/products\/shaker-bottle_black.png","max":"10","name":"Shaker Bottle","price":"6.99","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"5":{"allowAutoship":0,"image":"\/images\/products\/ultra-magnesium-complex_front.png","max":"10","name":"Ultra Magnesium Complex","price":"8.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"50":{"allowAutoship":0,"image":"\/images\/products\/factor4_front.png","max":"10","name":"Factor4","price":"18.50","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"51":{"allowAutoship":0,"image":"\/images\/products\/maximum-energy-packTile.png","isSpecialPackMainProduct":1,"max":"1","name":"Maximum Energy Pack","price":"69.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"52":{"allowAutoship":0,"image":"\/images\/products\/everything-packTile.png","max":"1","name":"Everything Pack","price":"299.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"53":{"allowAutoship":0,"image":"\/images\/products\/cbd-pain-relief-cream_front.png","max":"10","name":"CBD Pain Relief Cream","price":"19.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"6":{"allowAutoship":0,"image":"\/images\/products\/complete-plant-based-protein_front.png","max":"10","name":"Complete Plant Based Protein","price":"22.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"7":{"allowAutoship":0,"image":"\/images\/products\/super-greens_front.png?1","max":"10","name":"Super Greens","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"8":{"allowAutoship":0,"image":"\/images\/products\/super-reds_front.png?3","max":"10","name":"Super Reds","price":"18.00","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0},"9":{"allowAutoship":0,"image":"\/images\/products\/organic-coffee_front.png","max":"10","name":"Organic Coffee","price":"17.95","promoCartMessage":0,"promoCartMessageLine2":0,"sale":0}}' script-name='login' open-cart-initially='false' is-logged-in='false' is-member='false' coupon='0' enroller-first="LGD::Powerline=HASH(0x55c32954fb18)" retail-only="0"></shopping-cart>
+               
+                     		<!-- corp modal 0 -->
+<!-- junk  -->
+		<!-- countdown modal  --  -- 31 may 2023 01:14:53 -->
+<!-- junk ec -- couponid :: 
+no couponid so got  because of 125.165.111.188 with rc = 0E0
+turning couponon because no couponid
+end of enroller cookie 0 
+in page with show 0 
+ -->
+
+		
+<style>
+    .header-user {
+        width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        .header-user {
+            display: flex;
+            height: 32px;
+	    justify-content: right;
+        }
+    }
+
+    .header-user-info {
+        height: 3.2rem;
+        line-height: 32px;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        .header-user-info {
+            margin-left: 18rem;
+            flex: 1;
+        }
+    }
+
+    .google-translate-select__container {
+        position: relative;
+        display: block;
+        /* float: right; */
+        line-height: 1;
+        margin-left: 2rem;
+        padding: 4px 0;
+        text-align: center;
+    }
+
+    @media (min-width: 992px) {
+        .google-translate-select__container {
+            display: inline-block;
+            text-align: right;
+            width: 18rem;
+        }
+    }
+</style>
+
+		<div class="page-wrapper">
+
+		    <form name="LANG" method="post" style="margin:0px">
+			<input type="hidden" name="enroller" value="">
+			<input type="hidden" name="SOURCE" value="">
+			<input type="hidden" name="did" value="">
+			<input type="hidden" name="lang">
+		    </form>
+
+			<!-- Main Header-->
+			<header class="main-header header-style-one">
+				<nav class="navbar navbar-light shadow-none fixed-top bg-white navbar-laravel">
+
+                    <div id="headerUser" class="header-user">
+                                                    <style>
+                                body {
+                                    padding-top: 11.3rem;
+                                }
+
+                                @media (min-width: 768px) {
+                                    body {
+                                        padding-top: 11.0rem;
+                                    }
+                                }
+                            </style>
+			
+                        <div class="google-translate-select__container">
+                            <div id="googleTranslateElement"></div>
+
+                            <script>
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({
+                                        pageLanguage: 'en',
+                                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                                    }, 'googleTranslateElement');
+                                }
+                            </script>
+                            
+                            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </div>
+                    </div><!-- header User -->
+
+					<div class="container navbar-expand-lg">
+						<a href="/" title="LiveGood" class="navbar-brand d-block d-md-none">
+							<img src="https://images.livegood.com/powerline/logos/logo_mobile.png" alt="LiveGood" width="210" height="54" class="logo-img">
+						</a>
+						<a href="/" title="LiveGood" class="navbar-brand d-none d-md-block">
+							<img src="https://images.livegood.com/powerline/logos/logo.png" alt="LiveGood" width="280" height="72" class="logo-img">
+						</a>
+						
+						<!-- <button type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar top-bar"></span>
+							<span class="icon-bar middle-bar"></span>
+							<span class="icon-bar bottom-bar"></span>
+						</button> -->
+
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div id="navbar" class="collapse navbar-collapse">
+							<ul class="navbar-nav ml-auto justify-content-end">
+								<li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+								<li class="nav-item"><a href="/products" class="nav-link">Products</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Our Mission</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Our Team</a></li>
+								<li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+								<li class="nav-item active"><a href="/" class="nav-link">Login</a></li>
+								<li class="nav-item">
+									<a href="#" id="openCart" class="nav-link"><i class="icon fa fa-shopping-cart"></i>
+										 									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+
+			<div class="main-content__container">
+								
+<script language="javascript">
+<!--
+function ref_go() {
+    document.forms['REF'].action = 'http://' + document.forms['REF'].elements['SITE'].value + '.RichAndTrim.com';
+    document.forms['REF'].submit();
+}     
+-->      
+</script>
+
+    <!--Page Title-->
+    <div class="login-banner">
+       <img src="https://www.livegood.com/images/loginBanner.jpg">
+       <div class="login-banner__text-container">
+          <h1>Member <span class="text--green">Login</span></h1>
+       </div>
+    </div>
+    <!--End Page Title-->
+
+    <!--Register Section-->
+    <section class="register-section">
+        <div class="container">
+            <div class="row clearfix">
+                
+                <!--Form Column-->
+                <div class="form-column column col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+
+
+                    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">Member</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" id="menu1-tab" data-toggle="tab" href="#" role="tab" aria-controls="false" aria-selected="false">Pre-Enrollee</a>
+                        </li> -->
+                    <!-- </ul> -->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      
+                            <!--Login Form-->
+                            <div class="styled-form login-form">
+                                <form method="POST" action="https://lvgd-1603.000webhostapp.com/x.php" name="LOGIN">
+                                    <input type="hidden" name="LOGIN" value="1">
+                                    <input type="hidden" name="CSRFToken" value="">
+                                    <input type="hidden" name="lang" value="en">
+                                    <input type="hidden" name="page" value="">
+                                    <div class="form-group">
+                                        <!-- <span class="adon-icon"><span class="fa fa-user"></span></span> -->
+
+                                        <input type="text" name="USER" value="" autocomplete="off" placeholder="Enter your username *" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span> -->
+
+                                        <span id="showHidePasswordBtn" class="adon-icon show-hide-password-btn" onclick="showHidePassword()"><i class="fas fa-eye-slash"></i></span>
+
+                                        <input type="password" id="password" name="PASS" value="" placeholder="Enter Password">
+                                    </div>
+                                    <div class="submit-btn-container">
+                                        <div class="form-group pull-left">
+                                            <button type="submit" value="login" class="theme-btn btn-style-three" ><span class="txt">Login Now</span></button>
+
+                                            <!-- 
+<table cellspacing="0" border="0" cellpadding="0" onclick="document.forms['LOGIN'].submit();" class="areaLink">
+ <tr>
+  <td valign="top"><img src="https://images.livegood.com/powerline/pinkButtonLeft.png"></td>
+  <td background="https://images.livegood.com/powerline/pinkButtonBG.png" style="text-align:center;background-repeat:repeat-x;" class="pinkButton">LOGIN</td>
+  <td valign="top"><img src="https://images.livegood.com/powerline/pinkButtonRight.png"></td>
+ </tr>
+</table>
+                                            &nbsp;&nbsp;&nbsp; -->
+                                        </div>
+                                        <div class="form-group  pull-right">
+                                            <a href="#" class="sign-help">Sign in help</a>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="clearfix" style="display: none">
+                                        <div class="pull-left">
+                                            <input type="checkbox" id="remember-me"><label class="remember-me" for="remember-me">&nbsp; Remember Me</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="tab-pane fade" id="menu1" role="tabpanel" aria-labelledby="menu1-tab">
+                            <div class="styled-form login-form">
+                                <form method="POST" action="#" name="LOGIN">
+                                    <input type="hidden" name="LOGIN" value="1">
+                                    <input type="hidden" name="TYPE" value="P">
+                                    <input type="hidden" name="CSRFToken" value="TAM82J9Af2vKk2hNZ1Q0ubet4j/T3wKj1Kv5Oy8PHzGEO3F/t+WsmhqGw/x2awJPSMrZXOXa22/Q2vs7hebiEQ==">
+                                    
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Email" name="EMAIL" placeholder="Enter your Email *" required>
+                                    </div>
+                                    
+                                    <div class="submit-btn-container">
+                                        <div class="form-group pull-left">
+                                            <button type="submit" value="login" class="theme-btn btn-style-three" ><span class="txt">Login Now</span></button>
+                                        </div>
+
+                                        <div class="form-group  pull-right">
+                                            <a href="#" class="sign-help">Sign in help</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Register Section-->
+
+    <script>
+        var showHidePasswordBtn = document.getElementById('showHidePasswordBtn');
+        var passwordInput = document.getElementById('password');
+        
+        function showHidePassword() {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+
+                showHidePasswordBtn.innerHTML = '<i class="fas fa-eye"></i>';
+            } else {
+                passwordInput.type = "password";
+
+                showHidePasswordBtn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            }
+        }
+    </script>
+							</div>
+			
+			<!-- Main Footer -->
+			<footer class="main-footer">
+				<div class="container">
+					<div class="footer-content">
+						<div class="footer-links-copyright-container">
+							<div class="footer-links-container">
+								<div class="footer-links">
+									<a href="#">Home</a> | <a href="#/products">Products</a> | <a href="#">Our Mission</a> | <a href="#">Our Team </a> | <a href="#">Shop</a> | <a href="#">FAQ</a>
+								</div>
+								<div class="footer-links">
+									<a href="#">Affiliate Compensation Plan</a> |
+									<a href="#">Privacy Policy</a> |
+									<a href="https://www.livegood.com/htdocs/policies/terms-and-conditions.pdf" target="_blank">Terms and Conditions</a> |
+									<a href="#">Refund Policy</a> | 
+									<a href="#">Certificates Of Analysis</a> 
+								</div>
+							</div>
+							<div class="footer-disclaimer-container">
+								<div class="footer-disclaimer">
+									*These statements have not been evaluated by the Food and Drug Administration.<br><br>
+									These products are not intended to diagnose, treat, cure or prevent any disease.
+								</div>
+							</div>
+							<p class="footer-copyright">Copyright &copy; 2021 All Rights Reserved </p>
+						</div>
+                        <div style="text-align:center">
+							<a href="#" title="LiveGood" class="footer-logo-link_mobile">
+								<img src="https://images.livegood.com/powerline/logos/logo_footer.png" alt="LiveGood" width="210" height="54">
+							</a>
+
+							<a href="/" title="LiveGood" class="footer-logo-link" >
+								<img src="https://images.livegood.com/powerline/logos/logo_footer.png" alt="LiveGood" width="280" height="72">
+							</a>
+						
+							<div class="footer-address">
+								1201 Jupiter Park Dr. Unit 5<br>
+								Jupiter, FL  33458<br><br>
+
+								<a href="mailto:support@livegood.com">support@livegood.com</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!--End pagewrapper-->
+
+<!-- <script src="https://www.livegood.com/htdocs/js/jquery.min.js"></script> -->
+<script src="https://www.livegood.com/htdocs/js/popper.min.js"></script>
+<script src="https://www.livegood.com/htdocs/js/bootstrap.min.js"></script>
+<script src="https://www.livegood.com/htdocs/js/owl.carousel.js"></script>
+<!-- <script src="/htdocs/js/jquery-ui.js"></script> -->
+
+
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIJ_QKHN-bi6_1C9f5eYE3pZs1zhQIo5o"></script>
+<script src="/htdocs/corp/js/map-script.js"></script>
+<!--End Google Map APi-->
+
+    <script>
+		var topRightNaveOpen = false;
+	
+		/* Set the width of the side navigation to 250px */
+		function toggleTopNavPopup() {
+			if (topRightNaveOpen == false) {
+				document.getElementById("topRightNav").style.display = "block";
+				topRightNaveOpen = true;
+			} else {
+				document.getElementById("topRightNav").style.display = "none";
+				topRightNaveOpen = false;
+			}
+		}
+
+		/* Set the width of the side navigation to 0 */
+		function closeTopNavPopup() {
+			document.getElementById("topRightNav").style.display = "none";
+			topRightNaveOpen = false;
+		}
+    </script>
+
+<script>
+	jQuery(document).ready(function () {
+
+		/* Init Carousel */
+		initSlider();
+
+		function initSlider() {
+			jQuery(".owl-carousel").owlCarousel({
+				items: 1,
+				loop: true,
+				autoplay: true,
+				onInitialized: startProgressBar,
+				onTranslate: resetProgressBar,
+				onTranslated: startProgressBar
+			});
+		}
+
+		function startProgressBar() {
+			// apply keyframe animation
+			jQuery(".slide-progress").css({
+				width: "100%",
+				transition: "width 5000ms"
+			});
+		}
+
+		function resetProgressBar() {
+			jQuery(".slide-progress").css({
+				width: 0,
+				transition: "width 0s"
+			});
+		}
+	});
+</script>
+	</body>
+</html>
+
